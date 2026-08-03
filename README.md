@@ -30,17 +30,17 @@ Es la puerta de entrada a la red social.
 - Si no has iniciado sesión, te invita a entrar mediante el botón "Iniciar sesión".
 - Si ya estás logueado, te muestra tu menú de navegación y te da acceso directo a "Ver mi perfil" o "Ver todos los empleados".
 
-![Captura de Home sin iniciar sesión](/screenshots/home.png) ![Captura de Home con la sesión iniciada](/screenshots/home-logged.png)
+![Captura de Home sin iniciar sesión](/public/screenshots/home.png) ![Captura de Home con la sesión iniciada](/public/screenshots/home-logged.png)
 
 ### 2. Login (Inicio de sesión)
 Pantalla segura y limpia donde puedes introducir tus credenciales. La autenticación se realiza simulando una API real (usando DummyJSON). Una vez validado, guarda de forma segura tu sesión en el navegador.
 
-![Captura de Login](/screenshots/login.png)
+![Captura de Login](/public/screenshots/login.png)
 
 ### 3. Mi Perfil
 Tu espacio personal. Muestra de forma elegante y clara toda la información de tu cuenta (foto de perfil, nombre, correo, teléfono y edad). Todo presentado con un atractivo diseño de tarjetas translúcidas sobre fondos dinámicos.
 
-![Captura de Mi Perfil](/screenshots/profile.png)
+![Captura de Mi Perfil](/public/screenshots/profile.png)
 
 ### 4. Empleados
 El directorio de la empresa.
@@ -48,7 +48,7 @@ El directorio de la empresa.
 - **Paginación inteligente**: Navega de forma ultra rápida entre las distintas páginas del directorio sin tiempos de carga innecesarios.
 - **Gestión de amistades**: Puedes "Añadir amigo" o "Eliminar amigo" fácilmente con un solo clic. El sistema recuerda tus amigos aunque cierres el navegador.
 
-![Captura de Empleados](/screenshots/employees.png)
+![Captura de Empleados](/public/screenshots/employees.png)
 
 ---
 
