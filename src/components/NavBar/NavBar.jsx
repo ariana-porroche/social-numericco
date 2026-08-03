@@ -1,14 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import './NavBar.css';
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setIsMenuOpen(false);
+    navigate('/');
   };
 
   useEffect(() => {
@@ -41,15 +49,9 @@ export default function NavBar() {
           <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setIsMenuOpen(false)}>
             Dashboard
           </NavLink>
-          <NavLink to="/tab2" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setIsMenuOpen(false)}>
-            Tab 2
-          </NavLink>
-          <NavLink to="/tab3" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setIsMenuOpen(false)}>
-            Tab 3
-          </NavLink>
         </div>
         <div className="navbar-actions">
-          <Button variant="primary" onClick={() => setIsMenuOpen(false)}>CONTACT</Button>
+          <Button variant="primary" onClick={handleLogout}>Cerrar sesión</Button>
         </div>
       </div>
     </nav>
