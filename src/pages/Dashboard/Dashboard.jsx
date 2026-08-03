@@ -3,6 +3,7 @@ import Card from '../../components/Card/Card';
 import TextInput from '../../components/TextInput/TextInput';
 import Table from '../../components/Table/Table';
 import './Dashboard.css';
+import InfoField from '../../components/InfoField/InfoField';
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -46,10 +47,10 @@ export default function Dashboard() {
                 <img src={user.image} alt="Perfil" className="profile-image" />
               )}
               <div className="profile-details" style={{ gap: '0px' }}>
-                <TextInput label="Nombre" value={`${user.firstName} ${user.lastName}`} readOnly />
-                <TextInput label="Email" value={user.email || 'No especificado'} readOnly />
-                <TextInput label="Teléfono" value={user.phone || 'No especificado'} readOnly />
-                <TextInput label="Edad" value={user.age ? `${user.age} años` : 'No especificada'} readOnly />
+                <InfoField label="Nombre" value={`${user.firstName} ${user.lastName}`} readOnly />
+                <InfoField label="Email" value={user.email || 'No especificado'} readOnly />
+                <InfoField label="Teléfono" value={user.phone || 'No especificado'} readOnly />
+                <InfoField label="Edad" value={user.age ? `${user.age} años` : 'No especificada'} readOnly />
               </div>
             </div>
           ) : (
