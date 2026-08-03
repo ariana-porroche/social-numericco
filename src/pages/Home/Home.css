@@ -22,3 +22,8 @@
     font-size: 32px;
     color: white;
 }
+
+.buttons-container {
+    display: flex;
+    gap: 16px;
+}
