@@ -1,11 +1,26 @@
 import { useState, useEffect } from 'react';
 import Card from '../../components/Card/Card';
 import Table from '../../components/Table/Table';
+import Button from '../../components/Button/Button';
 import './EmployeesList.css';
 
 export default function EmployeesList() {
   const [employees, setEmployees] = useState([]);
   const [loadingEmployees, setLoadingEmployees] = useState(true);
+  const [friends, setFriends] = useState([]);
+
+  const toggleFriend = (id) => {
+    setFriends(prev => {
+      let newFriends;
+      if (prev.includes(id)) {
+        newFriends = prev.filter(fId => fId !== id);
+      } else {
+        newFriends = [...prev, id];
+      }
+      localStorage.setItem('friends', JSON.stringify(newFriends));
+      return newFriends;
+    });
+  };
 
   const fetchEmployees = () => {
     setLoadingEmployees(true);
@@ -15,10 +30,10 @@ export default function EmployeesList() {
         if (data && data.users) {
           const storedUser = localStorage.getItem('user');
           const currentUser = storedUser ? JSON.parse(storedUser) : null;
-          const others = currentUser 
+          const others = currentUser
             ? data.users.filter(u => u.id !== currentUser.id)
             : data.users;
-          
+
           setEmployees(others);
         }
       })
@@ -28,27 +43,45 @@ export default function EmployeesList() {
 
   useEffect(() => {
     fetchEmployees();
+    const storedFriends = localStorage.getItem('friends');
+    if (storedFriends) {
+      setFriends(JSON.parse(storedFriends));
+    }
   }, []);
 
   return (
     <div className="employees-list-page">
       <Card title="Listado de empleados" className="employees-list-card">
-        <Table 
+        <Table
           columns={[
-            { 
-              header: 'Avatar', 
-              render: (emp) => <img src={emp.image} alt={emp.firstName} className="table-avatar" /> 
+            {
+              header: 'Avatar',
+              render: (emp) => <img src={emp.image} alt={emp.firstName} className="table-avatar" />
             },
-            { 
-              header: 'Nombre', 
-              render: (emp) => `${emp.firstName} ${emp.lastName}` 
+            {
+              header: 'Nombre',
+              render: (emp) => `${emp.firstName} ${emp.lastName}`
             },
-            { 
-              header: 'Email', 
-              accessor: 'email' 
+            {
+              header: 'Email',
+              accessor: 'email'
+            },
+            {
+              header: 'Acciones',
+              render: (emp) => {
+                const isFriend = friends.includes(emp.id);
+                return (
+                  <Button
+                    variant={isFriend ? "secondary" : "primary"}
+                    onClick={() => toggleFriend(emp.id)}
+                  >
+                    {isFriend ? 'Eliminar amigo' : 'Añadir amigo'}
+                  </Button>
+                );
+              }
             }
-          ]} 
-          data={employees} 
+          ]}
+          data={employees}
           pageSize={5}
           loading={loadingEmployees}
         />
