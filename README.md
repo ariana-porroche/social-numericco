@@ -70,7 +70,7 @@ Para el desarrollo del **Reto 1** se ha seguido una metodología ágil y estruct
      🔗 [Documento de Catálogo de Requisitos](https://docs.google.com/document/d/1t_xp9Jy4nKD_bHEcDUNzwzJXMK143iGAaH6VBMHfK8Y/edit?usp=sharing)
 
 2. **Prototipado Básico (Figma):**
-   * Diseño básico de las interfaces en Figma.
+   * Diseño básico de las interfaces en Figma 🔗 [Archivo del prototipado en Figma](https://www.figma.com/design/watdObdT8qcYuOs0PsXCdF/social-numericco?node-id=0-1&p=f&t=lxMlLWMnvp9zJIGu-0).
    * Definición del sistema de diseño: paleta de colores corporativos, tipografía y componentes reutilizables (tarjetas de perfil, tablas paginadas, botones de acción).
 
 3. **Desarrollo (React + Vite):**
