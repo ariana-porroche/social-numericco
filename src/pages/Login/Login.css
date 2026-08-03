@@ -13,3 +13,11 @@
     width: 100%;
     max-width: 400px;
 }
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 16px;
+    text-align: center;
+}
