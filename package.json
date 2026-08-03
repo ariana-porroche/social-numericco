@@ -12,6 +12,7 @@
   "dependencies": {
     "deck.gl": "^9.1.14",
     "leaflet": "^1.9.4",
+    "lucide-react": "^1.28.0",
     "react": "^19.0.0-rc.1",
     "react-dom": "^19.0.0-rc.1",
     "react-leaflet": "^5.0.0-rc.2",

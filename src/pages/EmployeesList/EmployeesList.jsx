@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { UserPlus, UserMinus } from 'lucide-react';
 import Card from '../../components/Card/Card';
 import Table from '../../components/Table/Table';
 import Button from '../../components/Button/Button';
@@ -72,7 +73,8 @@ export default function EmployeesList() {
                 const isFriend = friends.includes(emp.id);
                 return (
                   <Button
-                    variant={isFriend ? "secondary" : "primary"}
+                    variant={isFriend ? "danger" : "secondary"}
+                    icon={isFriend ? <UserMinus size={18} /> : <UserPlus size={18} />}
                     onClick={() => toggleFriend(emp.id)}
                   >
                     {isFriend ? 'Eliminar amigo' : 'Añadir amigo'}

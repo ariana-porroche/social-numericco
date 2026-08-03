@@ -1,9 +1,10 @@
 import './Button.css';
 
-export default function Button({ children, variant = 'primary', className = '', ...props }) {
+export default function Button({ children, icon, variant = 'primary', className = '', ...props }) {
   return (
     <button className={`btn btn-${variant} ${className}`} {...props}>
-      {children}
+      {icon && <span className="btn-icon">{icon}</span>}
+      <span>{children}</span>
     </button>
   );
 }

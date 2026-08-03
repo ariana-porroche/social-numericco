@@ -4,6 +4,10 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .btn-primary {
@@ -35,4 +39,15 @@
 
 .btn-tertiary:hover {
   background-color: #bebebe;
+}
+
+.btn-danger {
+  background-color: transparent;
+  color: rgb(255, 118, 117);
+  border: 2px solid rgb(255, 118, 117);
+}
+
+.btn-danger:hover {
+  background-color: rgba(255, 118, 117, 0.2);
+  border: 2px solid rgb(255, 118, 117);
 }
