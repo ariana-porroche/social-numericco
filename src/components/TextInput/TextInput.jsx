@@ -1,6 +1,6 @@
 import './TextInput.css';
 
-export default function TextInput({ label, type = 'text', id, placeholder, value, onChange }) {
+export default function TextInput({ label, type = 'text', id, placeholder, value, onChange, readOnly = false }) {
   return (
     <div className="text-input-group">
       {label && <label htmlFor={id}>{label}</label>}
@@ -10,6 +10,7 @@ export default function TextInput({ label, type = 'text', id, placeholder, value
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        readOnly={readOnly}
       />
     </div>
   );
