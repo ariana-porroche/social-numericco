@@ -16,6 +16,7 @@ export default function NavBar() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setIsMenuOpen(false);
+    window.dispatchEvent(new Event('authChange'));
     navigate('/');
   };
 
