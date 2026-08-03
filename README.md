@@ -56,8 +56,6 @@ El directorio de la empresa.
 - React 18 + Vite
 - React Router (para navegación)
 - Lucide React (iconografía)
-- Vanilla CSS (Glassmorphism & Flex/Grid)
-
 
 ---
 
