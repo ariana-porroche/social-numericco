@@ -4,6 +4,7 @@ import Home from './pages/Home/Home'
 import Tab1 from './pages/Tab1/Tab1'
 import Tab2 from './pages/Tab2/Tab2'
 import Tab3 from './pages/Tab3/Tab3'
+import Login from './pages/Login/Login'
 import NavBar from './components/NavBar/NavBar'
 
 function Layout() {
@@ -22,6 +23,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route element={<Layout />}>
           <Route path="/tab1" element={<Tab1 />} />
           <Route path="/tab2" element={<Tab2 />} />
