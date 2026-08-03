@@ -1,9 +1,14 @@
 .employees-list-page {
   width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .employees-list-card {
   width: 100%;
+  box-sizing: border-box;
 }
 
 .table-avatar {
