@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Card from '../../components/Card/Card';
 import TextInput from '../../components/TextInput/TextInput';
+import Table from '../../components/Table/Table';
 import './Dashboard.css';
 
 export default function Dashboard() {
@@ -55,28 +56,23 @@ export default function Dashboard() {
           {loadingEmployees ? (
             <p style={{ color: 'rgba(255, 255, 255, 0.7)', textAlign: 'center', marginTop: '20px' }}>Cargando empleados...</p>
           ) : (
-            <div className="table-container">
-              <table className="employees-table">
-                <thead>
-                  <tr>
-                    <th>Avatar</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {employees.map(emp => (
-                    <tr key={emp.id}>
-                      <td>
-                        <img src={emp.image} alt={emp.firstName} className="table-avatar" />
-                      </td>
-                      <td>{emp.firstName} {emp.lastName}</td>
-                      <td>{emp.email}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <Table
+              columns={[
+                {
+                  header: 'Avatar',
+                  render: (emp) => <img src={emp.image} alt={emp.firstName} className="table-avatar" />
+                },
+                {
+                  header: 'Nombre',
+                  render: (emp) => `${emp.firstName} ${emp.lastName}`
+                },
+                {
+                  header: 'Email',
+                  accessor: 'email'
+                }
+              ]}
+              data={employees}
+            />
           )}
         </Card>
       </div>
