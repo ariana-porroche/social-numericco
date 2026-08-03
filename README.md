@@ -62,6 +62,28 @@ El directorio de la empresa.
 ---
 
 
+## Metodología de Trabajo
+
+Para el desarrollo del **Reto 1** se ha seguido una metodología ágil y estructurada en 4 fases, garantizando la calidad del software, la usabilidad de la interfaz y la modularidad del código:
+
+1. **Catálogo de Requisitos (Análisis inicial):**
+   * Definición y desglose de historias de usuario, funcionalidades principales y requerimientos de integración con la API de `dummyjson.com`.
+   * Puedes consultar el catálogo completo de requisitos en el siguiente enlace:  
+     🔗 [Documento de Catálogo de Requisitos](https://docs.google.com/document/d/1t_xp9Jy4nKD_bHEcDUNzwzJXMK143iGAaH6VBMHfK8Y/edit?usp=sharing)
+
+2. **Prototipado Básico (Figma):**
+   * Diseño básico de las interfaces en Figma.
+   * Definición del sistema de diseño: paleta de colores corporativos, tipografía y componentes reutilizables (tarjetas de perfil, tablas paginadas, botones de acción).
+
+3. **Desarrollo (React + Vite):**
+   * Implementación de la arquitectura de la aplicación priorizando la modularidad y la gestión del estado (persistencia en `localStorage`, autenticación ficticia y paginación rápida).
+   * Creación de componentes con enfoque *clean code* y buenas prácticas modernas de React 18.
+
+4. **Documentación y Pruebas:**
+   * Verificación manual de los flujos de inicio de sesión, permanencia de sesión y actualización dinámica de la lista de amigos.
+   * Redacción de las especificaciones técnicas en el presente repositorio.
+
+
 # Reto 2
 
 
