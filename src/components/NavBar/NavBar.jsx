@@ -46,8 +46,11 @@ export default function NavBar() {
 
       <div className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="navbar-tabs">
-          <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setIsMenuOpen(false)}>
-            Dashboard
+          <NavLink to="/perfil" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setIsMenuOpen(false)}>
+            Mi perfil
+          </NavLink>
+          <NavLink to="/empleados" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setIsMenuOpen(false)}>
+            Empleados
           </NavLink>
         </div>
         <div className="navbar-actions">

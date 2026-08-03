@@ -1,0 +1,15 @@
+.employees-list-page {
+  width: 100%;
+}
+
+.employees-list-card {
+  width: 100%;
+}
+
+.table-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
