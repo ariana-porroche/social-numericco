@@ -78,10 +78,10 @@ El modelo conceptual define las entidades principales, sus atributos y las relac
   * **sender:** El usuario que inicia/envía la acción de agregar.
   * **receiver:** El usuario que recibe la vinculación.
 
-![Captura del Modelo E-R](/e-r-diagram.png)
+![Captura del Modelo E-R](/public/e-r-diagram.png)
 
 ### 2. Modelo Relacional
 
 Traducción del diagrama conceptual a un esquema relacional con claves primarias (PK) y foráneas (FK):
 
-![Captura del Modelo Relacional](/relational-diagram.png)
+![Captura del Modelo Relacional](/public/relational-diagram.png)
