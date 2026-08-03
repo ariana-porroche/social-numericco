@@ -5,12 +5,29 @@ import './Dashboard.css';
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
+  const [employees, setEmployees] = useState([]);
+  const [loadingEmployees, setLoadingEmployees] = useState(true);
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
+    let currentUser = null;
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      currentUser = JSON.parse(storedUser);
+      setUser(currentUser);
     }
+
+    fetch('https://dummyjson.com/users')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.users) {
+          const others = currentUser
+            ? data.users.filter(u => u.id !== currentUser.id)
+            : data.users;
+          setEmployees(others);
+        }
+      })
+      .catch(err => console.error('Error fetching users:', err))
+      .finally(() => setLoadingEmployees(false));
   }, []);
 
   return (
@@ -35,6 +52,32 @@ export default function Dashboard() {
         </Card>
 
         <Card title="Listado de empleados" className="dashboard-card">
+          {loadingEmployees ? (
+            <p style={{ color: 'rgba(255, 255, 255, 0.7)', textAlign: 'center', marginTop: '20px' }}>Cargando empleados...</p>
+          ) : (
+            <div className="table-container">
+              <table className="employees-table">
+                <thead>
+                  <tr>
+                    <th>Avatar</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {employees.map(emp => (
+                    <tr key={emp.id}>
+                      <td>
+                        <img src={emp.image} alt={emp.firstName} className="table-avatar" />
+                      </td>
+                      <td>{emp.firstName} {emp.lastName}</td>
+                      <td>{emp.email}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </Card>
       </div>
     </div>
