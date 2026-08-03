@@ -27,7 +27,7 @@ export default function NavBar() {
   return (
     <nav className="navbar" ref={navRef}>
       <div className="navbar-logo">
-        <Link to="/" onClick={() => setIsMenuOpen(false)}>LOGO</Link>
+        <Link to="/" onClick={() => setIsMenuOpen(false)}>Social Numéricco</Link>
       </div>
 
       <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
@@ -38,8 +38,8 @@ export default function NavBar() {
 
       <div className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="navbar-tabs">
-          <NavLink to="/tab1" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setIsMenuOpen(false)}>
-            Tab 1
+          <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setIsMenuOpen(false)}>
+            Dashboard
           </NavLink>
           <NavLink to="/tab2" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setIsMenuOpen(false)}>
             Tab 2

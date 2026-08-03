@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  background-color: #ffffff;
+  background-color: #000000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   box-sizing: border-box;
@@ -21,7 +21,7 @@
 
 .navbar-logo a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
 }
 
 .navbar-tabs {
@@ -38,19 +38,19 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: #555;
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .navbar-tabs a:hover {
-  color: #646cff;
+  color: #739dff;
 }
 
 .navbar-tabs a.active {
-  color: #646cff;
-  border-bottom: 2px solid #646cff;
+  color: #739dff;
+  border-bottom: 2px solid #739dff;
 }
 
 .nav-menu {

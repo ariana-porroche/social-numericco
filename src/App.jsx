@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home/Home'
-import Tab1 from './pages/Tab1/Tab1'
 import Tab2 from './pages/Tab2/Tab2'
 import Tab3 from './pages/Tab3/Tab3'
 import Dashboard from './pages/Dashboard/Dashboard'
@@ -27,7 +26,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/tab1" element={<Tab1 />} />
           <Route path="/tab2" element={<Tab2 />} />
           <Route path="/tab3" element={<Tab3 />} />
         </Route>
