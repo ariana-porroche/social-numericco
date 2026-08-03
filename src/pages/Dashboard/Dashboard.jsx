@@ -9,26 +9,31 @@ export default function Dashboard() {
   const [employees, setEmployees] = useState([]);
   const [loadingEmployees, setLoadingEmployees] = useState(true);
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    let currentUser = null;
-    if (storedUser) {
-      currentUser = JSON.parse(storedUser);
-      setUser(currentUser);
-    }
-
-    fetch('https://dummyjson.com/users')
+  const fetchEmployees = () => {
+    setLoadingEmployees(true);
+    fetch(`https://dummyjson.com/users?limit=0`)
       .then(res => res.json())
       .then(data => {
         if (data && data.users) {
+          const storedUser = localStorage.getItem('user');
+          const currentUser = storedUser ? JSON.parse(storedUser) : null;
           const others = currentUser
             ? data.users.filter(u => u.id !== currentUser.id)
             : data.users;
+
           setEmployees(others);
         }
       })
       .catch(err => console.error('Error fetching users:', err))
       .finally(() => setLoadingEmployees(false));
+  };
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+    fetchEmployees();
   }, []);
 
   return (
@@ -53,27 +58,25 @@ export default function Dashboard() {
         </Card>
 
         <Card title="Listado de empleados" className="dashboard-card">
-          {loadingEmployees ? (
-            <p style={{ color: 'rgba(255, 255, 255, 0.7)', textAlign: 'center', marginTop: '20px' }}>Cargando empleados...</p>
-          ) : (
-            <Table
-              columns={[
-                {
-                  header: 'Avatar',
-                  render: (emp) => <img src={emp.image} alt={emp.firstName} className="table-avatar" />
-                },
-                {
-                  header: 'Nombre',
-                  render: (emp) => `${emp.firstName} ${emp.lastName}`
-                },
-                {
-                  header: 'Email',
-                  accessor: 'email'
-                }
-              ]}
-              data={employees}
-            />
-          )}
+          <Table
+            columns={[
+              {
+                header: 'Avatar',
+                render: (emp) => <img src={emp.image} alt={emp.firstName} className="table-avatar" />
+              },
+              {
+                header: 'Nombre',
+                render: (emp) => `${emp.firstName} ${emp.lastName}`
+              },
+              {
+                header: 'Email',
+                accessor: 'email'
+              }
+            ]}
+            data={employees}
+            pageSize={5}
+            loading={loadingEmployees}
+          />
         </Card>
       </div>
     </div>
