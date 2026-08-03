@@ -1,0 +1,28 @@
+.card {
+    background-color: rgba(1, 10, 32, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.card-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+.card-subtitle {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 32px;
+    text-align: center;
+}

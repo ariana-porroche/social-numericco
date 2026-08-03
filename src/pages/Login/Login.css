@@ -9,30 +9,7 @@
     background-position: center;
 }
 
-.login-container {
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 16px;
+.login-card {
     width: 100%;
     max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
-
-.login-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: white;
-    text-align: center;
-    margin-top: 0;
-}
-
-.login-subtitle {
-    font-size: 16px;
-    color: #ddd;
-    margin-bottom: 32px;
-    text-align: center;
 }
