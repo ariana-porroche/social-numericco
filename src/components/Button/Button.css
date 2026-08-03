@@ -1,0 +1,38 @@
+.btn {
+  padding: 8px 16px;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #646cff;
+  color: white;
+  border: 2px solid #646cff;
+}
+
+.btn-primary:hover {
+  background-color: #535bf2;
+  border-color: #535bf2;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #646cff;
+  border: 2px solid #646cff;
+}
+
+.btn-secondary:hover {
+  background-color: #f0f0ff;
+}
+
+.btn-tertiary {
+  background-color: transparent;
+  color: #646cff;
+  border: 2px solid transparent;
+}
+
+.btn-tertiary:hover {
+  background-color: #f0f0ff;
+}
