@@ -22,6 +22,15 @@
 .navbar-logo a {
   text-decoration: none;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-image {
+  height: 32px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .navbar-tabs {

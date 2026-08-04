@@ -36,7 +36,9 @@ export default function NavBar() {
   return (
     <nav className="navbar" ref={navRef}>
       <div className="navbar-logo">
-        <Link to="/" onClick={() => setIsMenuOpen(false)}>Social Numéricco</Link>
+        <Link to="/" onClick={() => setIsMenuOpen(false)}>
+          <img src="/logo-white.png" alt="Social Numéricco" className="navbar-logo-image" />
+        </Link>
       </div>
 
       <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
